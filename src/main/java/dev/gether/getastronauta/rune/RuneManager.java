@@ -51,6 +51,7 @@ public class RuneManager {
             return;
         }
         config.itemCoins = itemInMainHand;
+        config.save();
         MessageUtil.sendMessage(player, "&aPomyslnie ustawiono nowa walute astronauty!");
     }
 
