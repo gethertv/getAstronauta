@@ -12,6 +12,7 @@ import dev.gether.getastronauta.utils.ItemUtil;
 import dev.gether.getastronauta.utils.MessageUtil;
 import dev.rollczi.litecommands.platform.LiteSender;
 import org.bukkit.Bukkit;
+import org.bukkit.Statistic;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Player;
@@ -78,10 +79,9 @@ public class UserManager {
 
                 // get attribute
                 AttributeInstance attribute = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-                double value = attribute.getValue();
 
                 // set new value
-                attribute.setBaseValue(value+heartDouble);
+                attribute.setBaseValue(20+heartDouble);
 
             }
 
@@ -176,6 +176,8 @@ public class UserManager {
     public void resetRunes(Player player) {
         User user = userData.get(player.getUniqueId());
         user.resetRunes();
+        // set default hearts 10 = 20 health
+        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(20);
     }
 
     public Optional<User> getUser(UUID uuid) {
