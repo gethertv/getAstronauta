@@ -8,6 +8,7 @@ import dev.gether.getastronauta.user.User;
 import dev.gether.getastronauta.user.UserManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemDamageEvent;
 
@@ -26,8 +27,12 @@ public class PlayerItemDamageListener implements Listener {
         this.runeManager = runeManager;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onItemDamage(PlayerItemDamageEvent event) {
+
+        if(event.isCancelled())
+            return;
+
         // player
         Player player = event.getPlayer();
         // user

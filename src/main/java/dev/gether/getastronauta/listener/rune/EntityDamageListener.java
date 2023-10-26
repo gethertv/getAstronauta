@@ -10,6 +10,7 @@ import dev.gether.getastronauta.user.UserManager;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
@@ -32,8 +33,12 @@ public class EntityDamageListener implements Listener {
         this.config = config;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onEntityDamage(EntityDamageByEntityEvent event) {
+
+        if(event.isCancelled())
+            return;
+
         Entity damager = event.getDamager();
         Entity entity = event.getEntity();
 
