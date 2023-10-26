@@ -1,8 +1,8 @@
-package dev.gether.getaustronauta.listener;
+package dev.gether.getastronauta.listener;
 
-import dev.gether.getaustronauta.inv.SpinInvHolder;
-import dev.gether.getaustronauta.spin.SpinManager;
-import dev.gether.getaustronauta.utils.ItemUtil;
+import dev.gether.getastronauta.inv.SpinInvHolder;
+import dev.gether.getastronauta.spin.SpinManager;
+import dev.gether.getastronauta.utils.ItemUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

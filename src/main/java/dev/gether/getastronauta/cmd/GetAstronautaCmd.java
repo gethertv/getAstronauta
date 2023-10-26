@@ -1,10 +1,10 @@
-package dev.gether.getaustronauta.cmd;
+package dev.gether.getastronauta.cmd;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.rune.RuneManager;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.user.UserManager;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.rune.RuneManager;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.user.UserManager;
+import dev.gether.getastronauta.utils.MessageUtil;
 import dev.rollczi.litecommands.argument.Arg;
 import dev.rollczi.litecommands.argument.Name;
 import dev.rollczi.litecommands.command.execute.Execute;
@@ -41,7 +41,7 @@ public class GetAstronautaCmd {
     @Execute(route = "reload")
     @Permission("getastronauta.admin")
     public void reloadPlugin(LiteSender liteSender) {
-        GetAustronauta.getInstance().reloadPlugin(liteSender);
+        GetAstronauta.getInstance().reloadPlugin(liteSender);
     }
 
     @Execute(route = "reset all")

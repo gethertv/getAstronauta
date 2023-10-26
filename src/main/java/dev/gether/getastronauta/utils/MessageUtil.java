@@ -1,6 +1,6 @@
-package dev.gether.getaustronauta.utils;
+package dev.gether.getastronauta.utils;
 
-import dev.gether.getaustronauta.GetAustronauta;
+import dev.gether.getastronauta.GetAstronauta;
 import dev.rollczi.litecommands.platform.LiteSender;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class MessageUtil {
 
     // logger
-    private static final Logger LOGGER = GetAustronauta.getInstance().getLogger();
+    private static final Logger LOGGER = GetAstronauta.getInstance().getLogger();
 
     public static void sendMessage(Player player, String message) {
         player.sendMessage(ColorFixer.addColors(message));

@@ -1,18 +1,11 @@
-package dev.gether.getaustronauta.inv;
+package dev.gether.getastronauta.inv;
 
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.utils.ColorFixer;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.utils.ColorFixer;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SpinInvHolder implements InventoryHolder {
 

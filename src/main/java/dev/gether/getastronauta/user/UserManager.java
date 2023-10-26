@@ -1,15 +1,15 @@
-package dev.gether.getaustronauta.user;
+package dev.gether.getastronauta.user;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.LangConfig;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.inv.AstronautaInvHolder;
-import dev.gether.getaustronauta.rune.Rune;
-import dev.gether.getaustronauta.rune.RuneLevel;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ItemUtil;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.LangConfig;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.inv.AstronautaInvHolder;
+import dev.gether.getastronauta.rune.Rune;
+import dev.gether.getastronauta.rune.RuneLevel;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ItemUtil;
+import dev.gether.getastronauta.utils.MessageUtil;
 import dev.rollczi.litecommands.platform.LiteSender;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
@@ -119,7 +119,7 @@ public class UserManager {
 
         ItemUtil.removeItem(player, config.itemCoins, (int) runeLevel.getCost());
         user.increaseRune(rune.getRuneType());
-        MessageUtil.sendMessage(player, langConfig.useRune);
+        MessageUtil.sendMessage(player, langConfig.successfullyUpgrade);
         return true;
     }
 
@@ -158,7 +158,7 @@ public class UserManager {
 
     // implement all user from database why is online when the plugin is loaded
     public void loadOnlineUsers() {
-        Bukkit.getScheduler().runTask(GetAustronauta.getInstance(), () -> {
+        Bukkit.getScheduler().runTask(GetAstronauta.getInstance(), () -> {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 loadUser(player);
             }

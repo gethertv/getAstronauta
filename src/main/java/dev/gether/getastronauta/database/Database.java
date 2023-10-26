@@ -1,13 +1,12 @@
-package dev.gether.getaustronauta.database;
+package dev.gether.getastronauta.database;
 
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ConsoleColor;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ConsoleColor;
+import dev.gether.getastronauta.utils.MessageUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public abstract class Database {
 

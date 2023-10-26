@@ -1,9 +1,9 @@
-package dev.gether.getaustronauta.database;
+package dev.gether.getastronauta.database;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ConsoleColor;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ConsoleColor;
+import dev.gether.getastronauta.utils.MessageUtil;
 import org.bukkit.Bukkit;
 
 import java.sql.DriverManager;
@@ -48,7 +48,7 @@ public class MySQL extends Database {
 
         } catch (ClassNotFoundException | SQLException e) {
             MessageUtil.sendLoggerInro("Error: "+e.getMessage(), ConsoleColor.RED);
-            Bukkit.getPluginManager().disablePlugin(GetAustronauta.getInstance());
+            Bukkit.getPluginManager().disablePlugin(GetAstronauta.getInstance());
         }
     }
 

@@ -1,22 +1,19 @@
-package dev.gether.getaustronauta.spin;
+package dev.gether.getastronauta.spin;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.LangConfig;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.inv.SpinInvHolder;
-import dev.gether.getaustronauta.rune.Rune;
-import dev.gether.getaustronauta.rune.RuneManager;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ItemUtil;
-import dev.gether.getaustronauta.utils.MessageUtil;
-import org.bukkit.Material;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.LangConfig;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.inv.SpinInvHolder;
+import dev.gether.getastronauta.rune.Rune;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ItemUtil;
+import dev.gether.getastronauta.utils.MessageUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -74,7 +71,7 @@ public class SpinManager {
                     ItemUtil.giveItem(player, inventory.getItem(13));
                     player.closeInventory();
                 }
-            }.runTaskLater(GetAustronauta.getInstance(), 40L);
+            }.runTaskLater(GetAstronauta.getInstance(), 40L);
             return;
         }
         int tick = ticksPassed;
@@ -100,7 +97,7 @@ public class SpinManager {
                 }
                 spin(player, spinInventory, ticks, speed);
             }
-        }.runTaskLater(GetAustronauta.getInstance(), (int) speedCopy);
+        }.runTaskLater(GetAstronauta.getInstance(), (int) speedCopy);
     }
 
     public ItemStack getRandomItem(){

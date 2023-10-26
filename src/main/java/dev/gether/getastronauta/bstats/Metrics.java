@@ -1,4 +1,4 @@
-package dev.gether.getaustronauta.bstats;
+package dev.gether.getastronauta.bstats;
 
 /*
  * This Metrics class was auto-generated and can be copied into your project if you are

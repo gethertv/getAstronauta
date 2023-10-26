@@ -1,8 +1,8 @@
-package dev.gether.getaustronauta.user;
+package dev.gether.getastronauta.user;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.rune.RuneType;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.rune.RuneType;
 
 import java.util.HashMap;
 
@@ -34,7 +34,7 @@ public class User {
 
     // reset runes to default value = 0
     public void resetRunes() {
-        for (RuneType runeType : GetAustronauta.getInstance().getRuneConfig().runes.keySet()) {
+        for (RuneType runeType : GetAstronauta.getInstance().getRuneConfig().runes.keySet()) {
             levelOfRunes.put(runeType, 0);
         }
     }

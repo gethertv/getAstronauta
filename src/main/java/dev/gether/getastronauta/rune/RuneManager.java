@@ -1,8 +1,8 @@
-package dev.gether.getaustronauta.rune;
+package dev.gether.getastronauta.rune;
 
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.utils.MessageUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

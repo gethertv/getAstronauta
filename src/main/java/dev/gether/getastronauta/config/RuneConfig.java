@@ -1,9 +1,9 @@
-package dev.gether.getaustronauta.config;
+package dev.gether.getastronauta.config;
 
-import dev.gether.getaustronauta.rune.Rune;
-import dev.gether.getaustronauta.rune.RuneLevel;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ItemBuilder;
+import dev.gether.getastronauta.rune.Rune;
+import dev.gether.getastronauta.rune.RuneLevel;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ItemBuilder;
 import eu.okaeri.configs.OkaeriConfig;
 import org.bukkit.Material;
 

@@ -1,4 +1,4 @@
-package dev.gether.getaustronauta.utils;
+package dev.gether.getastronauta.utils;
 
 public class ConsoleColor {
     public static final String RESET = "\033[0m";  // Text Reset

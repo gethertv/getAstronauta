@@ -1,8 +1,7 @@
-package dev.gether.getaustronauta.config;
+package dev.gether.getastronauta.config;
 
-import com.google.common.collect.Lists;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ItemBuilder;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ItemBuilder;
 import eu.okaeri.configs.OkaeriConfig;
 import eu.okaeri.configs.annotation.Comment;
 import org.bukkit.Material;

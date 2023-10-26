@@ -1,25 +1,27 @@
-package dev.gether.getaustronauta;
+package dev.gether.getastronauta;
 
-import dev.gether.getaustronauta.bstats.Metrics;
-import dev.gether.getaustronauta.cmd.GetAstronautaCmd;
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.DatabaseConfig;
-import dev.gether.getaustronauta.config.LangConfig;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.database.Database;
-import dev.gether.getaustronauta.database.DatabaseFactory;
-import dev.gether.getaustronauta.listener.ConnectListener;
-import dev.gether.getaustronauta.listener.InventoryClickListener;
-import dev.gether.getaustronauta.listener.InventoryCloseListener;
-import dev.gether.getaustronauta.listener.PlayerInteractListener;
-import dev.gether.getaustronauta.listener.rune.EntityDamageListener;
-import dev.gether.getaustronauta.listener.rune.PlayerItemDamageListener;
-import dev.gether.getaustronauta.rune.RuneManager;
-import dev.gether.getaustronauta.spin.SpinManager;
-import dev.gether.getaustronauta.user.UserManager;
-import dev.gether.getaustronauta.user.UserService;
-import dev.gether.getaustronauta.utils.ConsoleColor;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.bstats.Metrics;
+import dev.gether.getastronauta.cmd.GetAstronautaCmd;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.DatabaseConfig;
+import dev.gether.getastronauta.config.LangConfig;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.database.Database;
+import dev.gether.getastronauta.database.DatabaseFactory;
+import dev.gether.getastronauta.hook.HookManager;
+import dev.gether.getastronauta.listener.ConnectListener;
+import dev.gether.getastronauta.listener.InventoryClickListener;
+import dev.gether.getastronauta.listener.InventoryCloseListener;
+import dev.gether.getastronauta.listener.PlayerInteractListener;
+import dev.gether.getastronauta.listener.rune.BreakBlockListener;
+import dev.gether.getastronauta.listener.rune.EntityDamageListener;
+import dev.gether.getastronauta.listener.rune.PlayerItemDamageListener;
+import dev.gether.getastronauta.rune.RuneManager;
+import dev.gether.getastronauta.spin.SpinManager;
+import dev.gether.getastronauta.user.UserManager;
+import dev.gether.getastronauta.user.UserService;
+import dev.gether.getastronauta.utils.ConsoleColor;
+import dev.gether.getastronauta.utils.MessageUtil;
 import dev.rollczi.litecommands.LiteCommands;
 import dev.rollczi.litecommands.bukkit.LiteBukkitFactory;
 import dev.rollczi.litecommands.bukkit.tools.BukkitOnlyPlayerContextual;
@@ -37,9 +39,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.stream.Stream;
 
-public final class GetAustronauta extends JavaPlugin {
+public final class GetAstronauta extends JavaPlugin {
 
-    private static GetAustronauta instance;
+    private static GetAstronauta instance;
 
     // config section
     private DatabaseConfig databaseConfig;
@@ -54,6 +56,8 @@ public final class GetAustronauta extends JavaPlugin {
     private RuneManager runeManager;
     private SpinManager spinManager;
 
+    // hooks
+    private HookManager hookManager;
 
     // commands
     LiteCommands<CommandSender> liteCommands;
@@ -118,7 +122,8 @@ public final class GetAustronauta extends JavaPlugin {
                 new InventoryCloseListener(spinManager),
                 // rune listeners
                 new EntityDamageListener(userManager, runeManager, config),
-                new PlayerItemDamageListener(userManager, runeManager)
+                new PlayerItemDamageListener(userManager, runeManager),
+                new BreakBlockListener(config, userManager, runeManager)
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
 
         // register cmd
@@ -127,10 +132,14 @@ public final class GetAustronauta extends JavaPlugin {
         // implement all online users
         userManager.loadOnlineUsers();
 
+        // implement hooks
+        // todo: add support to FunnyGuilds
+        hookManager = new HookManager(this, userManager, runeManager);
+
         // run task autosave user into database
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, () -> { userManager.saveAllUsers(); }, 20L*120, 20L*120);
 
-        Metrics metrics = new Metrics(this, 19808);
+        Metrics metrics = new Metrics(this, 20144);
 
     }
     @Override
@@ -186,7 +195,7 @@ public final class GetAustronauta extends JavaPlugin {
         runeConfig.load();
         MessageUtil.sendMessage(liteSender, "&aPomyslnie przeladowano plugin!");
     }
-    public static GetAustronauta getInstance() {
+    public static GetAstronauta getInstance() {
         return instance;
     }
 

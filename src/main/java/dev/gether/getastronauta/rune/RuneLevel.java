@@ -1,4 +1,4 @@
-package dev.gether.getaustronauta.rune;
+package dev.gether.getastronauta.rune;
 
 import eu.okaeri.configs.OkaeriConfig;
 

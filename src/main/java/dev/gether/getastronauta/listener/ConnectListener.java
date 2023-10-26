@@ -1,7 +1,7 @@
-package dev.gether.getaustronauta.listener;
+package dev.gether.getastronauta.listener;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.user.UserManager;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.user.UserManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,10 +10,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class ConnectListener implements Listener {
 
-    private final GetAustronauta plugin;
+    private final GetAstronauta plugin;
     private final UserManager userManager;
 
-    public ConnectListener(GetAustronauta plugin, UserManager userManager) {
+    public ConnectListener(GetAstronauta plugin, UserManager userManager) {
         this.plugin = plugin;
         this.userManager = userManager;
     }

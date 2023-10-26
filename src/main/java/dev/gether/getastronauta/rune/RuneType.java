@@ -1,4 +1,4 @@
-package dev.gether.getaustronauta.rune;
+package dev.gether.getastronauta.rune;
 
 public enum RuneType {
     BOOST_DROP,

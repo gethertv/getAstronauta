@@ -1,8 +1,6 @@
-package dev.gether.getaustronauta.database;
+package dev.gether.getastronauta.database;
 
-import dev.gether.getaustronauta.config.DatabaseConfig;
-
-import static dev.gether.getaustronauta.database.TypeDatabase.MYSQL;
+import dev.gether.getastronauta.config.DatabaseConfig;
 
 public class DatabaseFactory {
 

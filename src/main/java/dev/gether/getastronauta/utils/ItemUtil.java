@@ -1,4 +1,4 @@
-package dev.gether.getaustronauta.utils;
+package dev.gether.getastronauta.utils;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

@@ -1,12 +1,12 @@
-package dev.gether.getaustronauta.listener.rune;
+package dev.gether.getastronauta.listener.rune;
 
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.rune.Rune;
-import dev.gether.getaustronauta.rune.RuneLevel;
-import dev.gether.getaustronauta.rune.RuneManager;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.user.User;
-import dev.gether.getaustronauta.user.UserManager;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.rune.Rune;
+import dev.gether.getastronauta.rune.RuneLevel;
+import dev.gether.getastronauta.rune.RuneManager;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.user.User;
+import dev.gether.getastronauta.user.UserManager;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

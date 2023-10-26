@@ -1,9 +1,9 @@
-package dev.gether.getaustronauta.database;
+package dev.gether.getastronauta.database;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.utils.ConsoleColor;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ConsoleColor;
+import dev.gether.getastronauta.utils.MessageUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class SQLite extends Database {
     @Override
     public void connect() {
 
-        GetAustronauta plugin = GetAustronauta.getInstance();
+        GetAstronauta plugin = GetAstronauta.getInstance();
         File dataFolder = new File(plugin.getDataFolder(), database + ".db");
         // check file with database exists
         // if not exists, then create

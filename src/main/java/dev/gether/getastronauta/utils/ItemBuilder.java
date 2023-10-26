@@ -1,6 +1,5 @@
-package dev.gether.getaustronauta.utils;
+package dev.gether.getastronauta.utils;
 
-import dev.gether.getaustronauta.config.Config;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;

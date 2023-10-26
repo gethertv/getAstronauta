@@ -1,15 +1,15 @@
-package dev.gether.getaustronauta.inv;
+package dev.gether.getastronauta.inv;
 
-import dev.gether.getaustronauta.config.Config;
-import dev.gether.getaustronauta.config.LangConfig;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.rune.Rune;
-import dev.gether.getaustronauta.rune.RuneLevel;
-import dev.gether.getaustronauta.rune.RuneType;
-import dev.gether.getaustronauta.user.User;
-import dev.gether.getaustronauta.utils.ColorFixer;
-import dev.gether.getaustronauta.utils.ConsoleColor;
-import dev.gether.getaustronauta.utils.MessageUtil;
+import dev.gether.getastronauta.config.Config;
+import dev.gether.getastronauta.config.LangConfig;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.rune.Rune;
+import dev.gether.getastronauta.rune.RuneLevel;
+import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.user.User;
+import dev.gether.getastronauta.utils.ColorFixer;
+import dev.gether.getastronauta.utils.ConsoleColor;
+import dev.gether.getastronauta.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

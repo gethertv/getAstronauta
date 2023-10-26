@@ -1,6 +1,6 @@
-package dev.gether.getaustronauta.config;
+package dev.gether.getastronauta.config;
 
-import dev.gether.getaustronauta.database.TypeDatabase;
+import dev.gether.getastronauta.database.TypeDatabase;
 import eu.okaeri.configs.OkaeriConfig;
 import eu.okaeri.configs.annotation.Comment;
 

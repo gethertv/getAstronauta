@@ -1,10 +1,9 @@
-package dev.gether.getaustronauta.user;
+package dev.gether.getastronauta.user;
 
-import dev.gether.getaustronauta.GetAustronauta;
-import dev.gether.getaustronauta.config.RuneConfig;
-import dev.gether.getaustronauta.database.Database;
-import dev.gether.getaustronauta.rune.RuneType;
-import org.bukkit.Bukkit;
+import dev.gether.getastronauta.GetAstronauta;
+import dev.gether.getastronauta.config.RuneConfig;
+import dev.gether.getastronauta.database.Database;
+import dev.gether.getastronauta.rune.RuneType;
 import org.bukkit.entity.Player;
 
 import java.sql.Connection;
@@ -15,10 +14,10 @@ import java.util.*;
 
 public class UserService {
 
-    private final GetAustronauta plugin;
+    private final GetAstronauta plugin;
     private Database database;
     private String userTable;
-    public UserService(GetAustronauta plugin, Database database) {
+    public UserService(GetAstronauta plugin, Database database) {
         this.plugin = plugin;
         this.database = database;
     }
