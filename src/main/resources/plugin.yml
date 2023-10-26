@@ -1,0 +1,4 @@
+name: getAustronauta
+version: '${project.version}'
+main: dev.gether.getaustronauta.GetAustronauta
+api-version: '1.16'
