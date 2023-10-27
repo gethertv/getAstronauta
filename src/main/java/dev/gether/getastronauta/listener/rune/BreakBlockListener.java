@@ -8,6 +8,7 @@ import dev.gether.getastronauta.rune.RuneType;
 import dev.gether.getastronauta.user.User;
 import dev.gether.getastronauta.user.UserManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -68,6 +69,10 @@ public class BreakBlockListener implements Listener {
 
         // get drop
         Collection<ItemStack> drops = block.getDrops(player.getItemInHand());
+        // next delete this (SET AIR) and cancel the event
+        event.setCancelled(true);
+        block.setType(Material.AIR);
+
         for (ItemStack drop : drops) {
             // if material is not on the list then ignore
             if(!config.allowMaterial.contains(drop.getType()))
