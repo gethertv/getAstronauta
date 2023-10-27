@@ -40,6 +40,11 @@ public class BreakBlockListener implements Listener {
             return;
 
         Block block = event.getBlock();
+
+        // if material is not on the list then ignore
+        if(!config.allowMaterial.contains(block.getType()))
+            return;
+
         // get user object
         Optional<User> userTemp = userManager.getUser(player.getUniqueId());
         if(userTemp.isEmpty())
@@ -69,15 +74,12 @@ public class BreakBlockListener implements Listener {
 
         // get drop
         Collection<ItemStack> drops = block.getDrops(player.getItemInHand());
+
         // next delete this (SET AIR) and cancel the event
         event.setCancelled(true);
         block.setType(Material.AIR);
 
         for (ItemStack drop : drops) {
-            // if material is not on the list then ignore
-            if(!config.allowMaterial.contains(drop.getType()))
-                continue;
-
             double amount = drop.getAmount() * multiplyBlock;
             drop.setAmount((int) amount);
 
