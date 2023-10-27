@@ -1,4 +1,5 @@
 name: getAstronauta
 version: '${project.version}'
 main: dev.gether.getastronauta.GetAstronauta
+softdepend: [getClan]
 api-version: '1.16'
