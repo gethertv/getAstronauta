@@ -63,6 +63,10 @@ public class BreakBlockListener implements Listener {
 
         // object rune - boost drop
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         // get stats for this rune including level player rune
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         if(runeByLevel.isEmpty())

@@ -51,6 +51,10 @@ public class PlayerItemDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         // get rune by user level
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         if(runeByLevel.isEmpty())

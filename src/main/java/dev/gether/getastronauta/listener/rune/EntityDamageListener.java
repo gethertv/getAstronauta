@@ -55,7 +55,7 @@ public class EntityDamageListener implements Listener {
                 // rune for poison
                 handleEventByRunePoison(user, entity);
                 // rune for resistance
-                handleEVentByRuneResistance(event, entity);
+                handleEventByRuneResistance(event, entity);
                 // rune for weakness
                 handleEventByRuneWeakness(user, entity);
                 // rune for slowness
@@ -77,6 +77,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         // get rune level
         if(runeByLevel.isEmpty())
@@ -109,6 +113,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         // get rune level
         if(runeByLevel.isEmpty())
@@ -128,7 +136,7 @@ public class EntityDamageListener implements Listener {
         }
     }
 
-    private void handleEVentByRuneResistance(EntityDamageByEntityEvent event, Entity entity) {
+    private void handleEventByRuneResistance(EntityDamageByEntityEvent event, Entity entity) {
         if(!(entity instanceof Player)) return;
 
         Player victim = (Player) entity;
@@ -149,6 +157,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         // get stats for user perk
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         if(runeByLevel.isEmpty())
@@ -178,6 +190,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         // get rune level
         if(runeByLevel.isEmpty())
@@ -207,6 +223,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         if(runeByLevel.isEmpty())
             return;
@@ -242,6 +262,10 @@ public class EntityDamageListener implements Listener {
             return;
 
         Rune rune = runeByType.get();
+        // check rune is enabled if not than return
+        if(!rune.isEnable())
+            return;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel);
         if(runeByLevel.isEmpty())
             return;

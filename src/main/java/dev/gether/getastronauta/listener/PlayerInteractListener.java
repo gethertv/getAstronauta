@@ -44,6 +44,10 @@ public class PlayerInteractListener implements Listener {
                 return;
 
             Rune rune = runeTemp.get();
+            // check if is disabled the return
+            if(!rune.isEnable())
+                return;
+
             // use item
             // check the player has max level if not then use
             userManager.useRune(player, rune);

@@ -21,6 +21,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.BOOST_DROP,
                 new Rune(
+                        true,
                         RuneType.BOOST_DROP,
                         ItemBuilder
                                 .create(Material.BOOK)
@@ -54,6 +55,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.BOOST_POINTS,
             new Rune(
+                    true,
                     RuneType.BOOST_POINTS,
                     ItemBuilder
                             .create(Material.BOOK)
@@ -83,6 +85,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.STRENGTH,
             new Rune(
+                    true,
                     RuneType.STRENGTH,
                     ItemBuilder.create(Material.BOOK)
                             .name("&3&lRuna Siły")
@@ -122,6 +125,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.WEAKNESS,
             new Rune(
+                    true,
                     RuneType.WEAKNESS,
                     ItemBuilder.create(Material.BOOK)
                             .name("&7&lRuna Osłabienia")
@@ -152,6 +156,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.DURABILITY,
             new Rune(
+                    true,
                     RuneType.DURABILITY,
                     ItemBuilder.create(Material.BOOK)
                             .name("&a&lRuna Wytrzymałości")
@@ -182,6 +187,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.HEARTS,
             new Rune(
+                    true,
                     RuneType.HEARTS,
                     ItemBuilder.create(Material.BOOK)
                             .name("&c&lRuna Życia")
@@ -221,6 +227,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.RESISTANCE,
             new Rune(
+                    true,
                     RuneType.RESISTANCE,
                     ItemBuilder.create(Material.BOOK)
                             .name("&7&lRuna Odporności")
@@ -256,6 +263,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.POISON,
             new Rune(
+                    true,
                     RuneType.POISON,
                     ItemBuilder.create(Material.BOOK)
                             .name("&2&lRuna Trucizny")
@@ -286,6 +294,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.SLOWNESS,
             new Rune(
+                    true,
                     RuneType.SLOWNESS,
                     ItemBuilder.create(Material.BOOK)
                             .name("&8&lRuna Spowolnienia")
@@ -316,6 +325,7 @@ public class RuneConfig extends OkaeriConfig {
              */
             RuneType.LIFE_STEAL,
             new Rune(
+                    true,
                     RuneType.LIFE_STEAL,
                     ItemBuilder.create(Material.BOOK)
                             .name("&4&lRuna LifeSteal")

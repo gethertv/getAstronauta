@@ -8,5 +8,6 @@ public class LangConfig extends OkaeriConfig {
     public String useRune = "&aPomyslnie ulepszono rune!";
     public String successfullyUpgrade = "&aPomyslnie ulepszono!";
     public String noRunes = "&8▎&c Nie posiadasz żadnych run";
+    public String noRunesItem = "&cNie posiadasz tylu run! Brakuje ci {need}";
     public String noCoins = "&cNie posidasz tyle coins!";
 }

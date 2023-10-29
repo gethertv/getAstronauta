@@ -67,6 +67,11 @@ public class AstronautaInvHolder implements InventoryHolder {
     }
 
     private void setItemPerk(User user, Config config, RuneType runeType, int slot) {
+        Rune rune = runeConfig.runes.get(runeType);
+        // if its disabled then return
+        if(!rune.isEnable())
+            return;
+
         // actually level rune of boost rank
         int actuallyLevel = user.getActuallyLevel(runeType);
         // get item for this level and set in the inventory
@@ -99,6 +104,10 @@ public class AstronautaInvHolder implements InventoryHolder {
             if(level==0) return;
 
             Rune rune = runeConfig.runes.get(runeType);
+            // if its disabled then return
+            if(!rune.isEnable())
+                return;
+
             Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(level);
             // if level with rune exists then add name to list
             runeByLevel.ifPresent(runeLevel -> activeRunes.add(runeLevel.getName()));

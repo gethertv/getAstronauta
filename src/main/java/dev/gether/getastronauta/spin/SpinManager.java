@@ -7,8 +7,10 @@ import dev.gether.getastronauta.config.RuneConfig;
 import dev.gether.getastronauta.inv.SpinInvHolder;
 import dev.gether.getastronauta.rune.Rune;
 import dev.gether.getastronauta.rune.RuneType;
+import dev.gether.getastronauta.utils.ConsoleColor;
 import dev.gether.getastronauta.utils.ItemUtil;
 import dev.gether.getastronauta.utils.MessageUtil;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -32,6 +34,10 @@ public class SpinManager {
     }
 
     public void drawRune(Player player) {
+        if(!canDraw()) {
+            MessageUtil.sendMessage(player, "WSZYSTKIE RUNY SA WYLACZONE! ERROR, NIE MOZNA LOSOWAC!");
+            return;
+        }
 
         // counting amount of coins
         int count = ItemUtil.calcItem(player, config.itemCoins);
@@ -103,9 +109,25 @@ public class SpinManager {
     public ItemStack getRandomItem(){
         List<Rune> runes = runeConfig.runes.values().stream().toList();
         Rune rune = runes.get(random.nextInt(runes.size()));
-        if(rune.getRuneType() == RuneType.BOOST_DROP || rune.getRuneType() == RuneType.BOOST_POINTS) {
+        // if rune is disabled then random again
+        if(!rune.isEnable())
             return getRandomItem();
-        }
+
+        // if its perk then get again random item
+        if(rune.getRuneType() == RuneType.BOOST_DROP || rune.getRuneType() == RuneType.BOOST_POINTS)
+            return getRandomItem();
+
         return rune.getItemStack();
+    }
+    // check this list contains other rune than BOOST_POINTS AND BOOST_DROP
+    private boolean canDraw() {
+        List<Rune> runes = runeConfig.runes.values().stream().toList();
+        for (Rune rune : runes) {
+            RuneType runeType = rune.getRuneType();
+            if(runeType!=RuneType.BOOST_DROP && runeType!=RuneType.BOOST_POINTS)  {
+                return true;
+            }
+        }
+        return false;
     }
 }

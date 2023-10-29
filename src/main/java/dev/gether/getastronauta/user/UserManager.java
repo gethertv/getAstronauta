@@ -59,9 +59,27 @@ public class UserManager {
             MessageUtil.sendMessage(player, langConfig.maxLevelRune);
             return;
         }
-        // if not has max level
+        // take rune next level
+        Optional<RuneLevel> tempRune = rune.getRuneByLevel(actuallyLevel + 1);
+        // if is empty = rune not exists = MAX LEVEL
+        if(tempRune.isEmpty())
+            return;
+
+        // get stats for new level of rune
+        RuneLevel runeLevel = tempRune.get();
+
+        // counting amount of item with the rune
+        int hasAmount = ItemUtil.calcItem(player, rune.getItemStack());
+        // cost
+        int cost = (int) runeLevel.getCost();
+        // if not has enough money
+        if(hasAmount<cost) {
+            MessageUtil.sendMessage(player, langConfig.noRunesItem.replace("{need}", String.valueOf(cost-hasAmount)));
+            return;
+        }
+
         // take item rune and increase level
-        ItemUtil.removeItem(player, rune.getItemStack(), 1);
+        ItemUtil.removeItem(player, rune.getItemStack(), cost);
         // increase level of rune
         user.increaseRune(rune.getRuneType());
 
@@ -69,26 +87,16 @@ public class UserManager {
         // add heart to attribute
         if(rune.getRuneType()==RuneType.HEARTS) {
 
-            // get stats for new level of rune
-            Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(user.getActuallyLevel(RuneType.HEARTS));
+            // multiply * 2 - reason attribute of heart has default 20 value but 10 heart
+            double heartDouble = runeLevel.getValue() * 2;
 
-            if(runeByLevel.isPresent()) {
-                RuneLevel runeLevel = runeByLevel.get();
-                // multiply * 2 - reason attribute of heart has default 20 value but 10 heart
-                double heartDouble = runeLevel.getValue() * 2;
+            // get attribute
+            AttributeInstance attribute = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
 
-                // get attribute
-                AttributeInstance attribute = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
-
-                // set new value
-                attribute.setBaseValue(20+heartDouble);
-
-            }
-
+            // set new value
+            attribute.setBaseValue(20+heartDouble);
 
         }
-
-
 
         MessageUtil.sendMessage(player, langConfig.useRune);
     }
@@ -106,6 +114,11 @@ public class UserManager {
         }
         // get cost upgrade
         Rune rune = runeConfig.runes.get(runeType);
+
+        // if rune is disabled then return
+        if(!rune.isEnable())
+            return false;
+
         Optional<RuneLevel> runeByLevel = rune.getRuneByLevel(actuallyLevel + 1);
         RuneLevel runeLevel = runeByLevel.get();
         // count how much user has item coin

@@ -8,14 +8,20 @@ import java.util.Optional;
 
 public class Rune extends OkaeriConfig {
 
+    private boolean enable;
     private RuneType runeType;
     private ItemStack itemStack;
     private Map<Integer, RuneLevel> runeLevel;
 
-    public Rune(RuneType runeType, ItemStack itemStack, Map<Integer, RuneLevel> runeLevel) {
+    public Rune(boolean enable, RuneType runeType, ItemStack itemStack, Map<Integer, RuneLevel> runeLevel) {
+        this.enable = enable;
         this.runeType = runeType;
         this.itemStack = itemStack;
         this.runeLevel = runeLevel;
+    }
+
+    public boolean isEnable() {
+        return enable;
     }
 
     public ItemStack getItemStack() {
