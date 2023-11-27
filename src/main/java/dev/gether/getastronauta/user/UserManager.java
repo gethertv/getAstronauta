@@ -157,7 +157,7 @@ public class UserManager {
         // get uset from map
         User user = userData.get(player.getUniqueId());
         if(user==null) {
-            throw new RuntimeException("User is null");
+            throw new RuntimeException("User is null "+player.getName());
         }
         // if user exists then update
         userService.updateUser(user, player);
@@ -171,11 +171,9 @@ public class UserManager {
 
     // implement all user from database why is online when the plugin is loaded
     public void loadOnlineUsers() {
-        Bukkit.getScheduler().runTask(GetAstronauta.getInstance(), () -> {
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                loadUser(player);
-            }
-        });
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            loadUser(player);
+        }
     }
 
     // save all progress users in database

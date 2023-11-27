@@ -54,7 +54,7 @@ public class UserService {
             user = new User(runeConfig);
         }
 
-        return Optional.ofNullable(user);
+        return Optional.of(user);
     }
 
     // only insert user into database

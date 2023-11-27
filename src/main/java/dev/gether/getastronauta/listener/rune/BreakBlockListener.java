@@ -7,7 +7,6 @@ import dev.gether.getastronauta.rune.RuneManager;
 import dev.gether.getastronauta.rune.RuneType;
 import dev.gether.getastronauta.user.User;
 import dev.gether.getastronauta.user.UserManager;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -35,7 +34,6 @@ public class BreakBlockListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onBreakBlock(BlockBreakEvent event) {
         Player player = event.getPlayer();
-
         if(event.isCancelled())
             return;
 
@@ -44,6 +42,11 @@ public class BreakBlockListener implements Listener {
         // if material is not on the list then ignore
         if(!config.allowMaterial.contains(block.getType()))
             return;
+
+//        getGenerator
+//        List<MetadataValue> generator = block.getMetadata("generator");
+//        if(generator.isEmpty())
+//            return;
 
         // get user object
         Optional<User> userTemp = userManager.getUser(player.getUniqueId());

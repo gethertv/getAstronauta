@@ -170,9 +170,10 @@ public class EntityDamageListener implements Listener {
         // percent by how much need to reduce damage
         // division per 100 to get multiply value on damage
         double damageMultiply = runeLevel.getValue()/100;
-        double damage = event.getDamage();
+        final double damage = event.getDamage();
         // set damage
-        event.setDamage(damage*damageMultiply);
+        final double finalDamage = damage - damage * damageMultiply;
+        event.setDamage(finalDamage);
 
 
     }

@@ -139,18 +139,16 @@ public final class GetAstronauta extends JavaPlugin {
         // run task autosave user into database
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, () -> { userManager.saveAllUsers(); }, 20L*120, 20L*120);
 
-        Metrics metrics = new Metrics(this, 20144);
+        new Metrics(this, 20144);
 
     }
     @Override
     public void onDisable() {
 
-
         if(database!=null) {
             userManager.saveAllUsers();
             database.disconnect();
         }
-
 
         HandlerList.unregisterAll(this);
         Bukkit.getScheduler().cancelTasks(this);
