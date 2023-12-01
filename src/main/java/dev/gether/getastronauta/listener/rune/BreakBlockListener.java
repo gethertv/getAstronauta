@@ -15,8 +15,10 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.MetadataValue;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 public class BreakBlockListener implements Listener {

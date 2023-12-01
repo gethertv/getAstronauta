@@ -138,6 +138,11 @@ public class UserManager {
 
     public void loadUser(Player player) {
 
+        // check user exists in member
+        User tempUser = userData.get(player.getUniqueId());
+        // if exists return
+        if(tempUser!=null) return;
+
         // add to database
         Optional<User> user = userService.loadUser(player, runeConfig);
         // if user exits in database
